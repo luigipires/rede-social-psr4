@@ -1,0 +1,7 @@
+https://color.adobe.com/pt/search?q=social%20network
+
+fazer responsivo mais detalhado em larguras menores
+tooltip para ver senhas
+
+fazer página de erro
+problema para usar as classes

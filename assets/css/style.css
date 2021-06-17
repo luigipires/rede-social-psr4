@@ -1,0 +1,481 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+}
+html,body{
+	height: 100%;
+}
+
+.clear{
+	clear: both;
+}
+
+/**************** header ********************/
+
+header{
+	background-color: #3F464D;
+	padding: 10px 15px;
+}
+header .container{
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.logo{
+	width: 70px;
+	height: 70px;
+	float: left;
+	border-radius: 100px;
+	border: 2px solid white;
+}
+.logo>img{
+	max-width: 100%;
+}
+.menu-desktop{
+	padding-top: 35px;
+	float: right;
+}
+.menu-desktop>ul{
+	list-style-type: none;
+}
+.menu-desktop>ul>li{
+	display: inline-block;
+	margin: 0 10px;
+}
+.menu-desktop>ul>li>a{
+	font-size: 15px;
+	color: #FFF6E6;
+}
+.menu-desktop>ul>li>a:hover{
+	text-decoration: underline;
+}
+.menu-mobile{
+	display: none;
+	float: right;
+	padding-top: 3.5px;
+}
+.menu-mobile>h3{
+	font-size: 40px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: #FFF6E6;
+	border: 2px solid white;
+	padding: 5px 12px;
+}
+.menu-mobile>ul{
+	width: 100%;
+	list-style-type: none;
+	position: absolute;
+	top: 90px;
+	display: none;
+	left: 0;
+	background-color: #3F464D;
+}
+.menu-mobile>ul>li{
+	text-align: center;
+	padding: 10px;
+}
+.menu-mobile>ul>li:hover{
+	background-color: #4F5861;
+}
+.menu-mobile>ul>li>a{
+	display: inline-block;
+	font-size: 17px;
+	color: #FFF6E6;
+}
+[login]{
+	cursor: pointer;
+}
+
+/**************** login ********************/
+
+.fundo-transparente{
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	top: 0;
+	height: 100%;
+	display: none;
+	padding: 80px 50px;
+}
+.fundo-branco{
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 8px;
+	min-height: 350px;
+	position: relative;
+	padding: 20px 10px 30px 10px;
+}
+.fechar-janela{
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	right: -15px;
+	top: -15px;
+}
+.fechar-janela>img{
+	max-width: 100%;
+	cursor: pointer;
+}
+.login{
+	max-width: 500px;
+	margin: 0 auto;
+}
+.login>div{
+	padding: 10px 0;
+}
+.login>div>h2{
+	text-align: center;
+	font-size: 21px;
+	font-weight: normal;
+	color: #2186C4;
+}
+.line{
+	height: 5px;
+	width: 100%;
+	background-color: #2186C4;
+	margin: 15px auto 10px auto;
+}
+.login>form>div{
+	padding: 10px 0;
+}
+.login>form>div>p{
+	font-size: 14px;
+	color: #2186C4;
+	text-align: center;
+	padding-bottom: 5px;
+}
+.login>form>div>input[type=text]{
+	outline: 0;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	height: 40px;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	padding: 0 10px;
+}
+.login>form>div>input[type=email]{
+	outline: 0;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	height: 40px;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	padding: 0 10px;
+}
+.login>form>div>input[type=password]{
+	outline: 0;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	height: 40px;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	padding: 0 10px;
+}
+.login>form>div>input[type=submit]{
+	outline: 0;
+	width: 200px;
+	display: block;
+	margin: 10px auto 0 auto;
+	height: 40px;
+	cursor: pointer;
+	background-color: #2186C4;
+	border: 0;
+	border-bottom: 5px solid #1A6EA2;
+	border-radius: 5px;
+	color: #FFF6E6;
+	font-size: 14px;
+}
+.login>form>div>input[type=submit]:hover{
+	border: 0;
+	background-color: #2497DF;
+}
+.opcoes-tela-branca{
+	max-width: 500px;
+	margin: 0 auto;
+}
+.opcao-cadastro{
+	padding-top: 10px;
+	text-align: center;
+}
+.opcao-cadastro>h2{
+	font-size: 17px;
+	color: #2186C4;
+}
+.opcao-cadastro>a{
+	color: white;
+	background-color: #2186C4;
+	padding: 10px 15px;
+	font-size: 14px;
+	display: inline-block;
+	border-radius: 5px;
+	margin-top: 15px;
+}
+.opcao-cadastro>a:hover{
+	background-color: #2497DF;
+}
+
+.senha{
+	position: relative;
+}
+.mostrar-senha{
+	position: absolute;
+	right: 10px;
+	top: 35px;
+}
+.mostrar-senha>h3{
+	color: #2186C4;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+/**************** cadastro ********************/
+
+.cadastro .container{
+	max-width: 1100px;
+	margin: 0 auto;
+	min-height: 503px;
+}
+.form-cadastro{
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 40px;
+}
+.form-cadastro>div>h2{
+	font-size: 24px;
+	text-align: center;
+	color: #2186C4;
+	text-decoration: underline;
+}
+.form-cadastro>form{
+	padding-top: 30px;
+}
+.form-cadastro>form>div{
+	padding: 15px 0;
+}
+.form-cadastro>form>div>p{
+	text-align: center;
+	color: #2186C4;
+	font-size: 17px;
+	padding-bottom: 10px;
+}
+.form-cadastro>form>div>input[type=text]{
+	outline: 0;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	height: 40px;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	padding: 0 10px;
+}
+.form-cadastro>form>div>input[type=email]{
+	outline: 0;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	height: 40px;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	padding: 0 10px;
+}
+.form-cadastro>form>div>input[type=password]{
+	outline: 0;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	height: 40px;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	padding: 0 10px;
+}
+.form-cadastro>form>div>label{
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+	background-color: #2186C4;
+	border-radius: 5px;
+	border: 0;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	font-size: 17px;
+}
+.form-cadastro>form>div>label:hover{
+	background-color: #2497DF;
+}
+.form-cadastro>form>div>input[type=file]{
+	display: none;
+}
+.form-cadastro>form>div>input[type=submit]{
+	outline: 0;
+	width: 250px;
+	display: block;
+	margin: 10px auto 0 auto;
+	height: 45px;
+	cursor: pointer;
+	background-color: #2186C4;
+	border-radius: 5px;
+	border: 0;
+	color: #FFF6E6;
+	font-size: 17px;
+}
+.form-cadastro>form>div>input[type=submit]:hover{
+	background-color: #2497DF;
+}
+
+.form-cadastro>form>div .mostrar-senha{
+	top: 47.5px;
+}
+
+/**************** footer ********************/
+
+footer{
+	background-color: #3F464D;
+	padding: 20px 15px;
+}
+footer .container{
+	max-width: 1100px;
+	margin: 0 auto;
+}
+footer .container>h2{
+	font-size: 20px;
+	color: #FFF6E6;
+	text-align: center;
+	font-weight: lighter;
+}
+
+/**************** mensagens de feedback ********************/
+
+.sucesso-mensagem{
+	background-color: #009644;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px !important;
+	border: 3px solid #62cc9c;
+	border-radius: 5px;
+}
+.sucesso-mensagem>h3{
+	font-size: 20px;
+	display: inline-block;
+	padding-right: 10px;
+	color: #FFF6E6;
+}
+.sucesso-mensagem>p{
+	font-size: 17px;
+	display: inline-block;
+	color: #FFF6E6;
+	padding-bottom: 0 !important;
+}
+.erro-mensagem{
+	background-color: #e23637;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px !important;
+	border: 3px solid #e38384;
+	border-radius: 5px;
+}
+.erro-mensagem>h3{
+	font-size: 20px;
+	display: inline-block;
+	padding-right: 10px;
+	color: #FFF6E6;
+}
+.erro-mensagem>p{
+	font-size: 17px;
+	display: inline-block;
+	color: #FFF6E6;
+	padding-bottom: 0 !important;
+}
+.alerta-mensagem{
+	background-color: #f9ab24;
+	width: 100%;
+	text-align: center;
+	padding: 10px !important;
+	margin: 0 auto;
+	border: 3px solid #fbcd8a;
+	border-radius: 5px;
+}
+.alerta-mensagem>h3{
+	font-size: 20px;
+	display: inline-block;
+	padding-right: 10px;
+	color: #FFF6E6;
+}
+.alerta-mensagem>p{
+	font-size: 17px;
+	display: inline-block;
+	color: #FFF6E6;
+	padding-bottom: 0 !important;
+}
+.alerta-mensagem>p>a{
+	color: white !important;
+	text-decoration: underline;
+}
+
+/**************** página de erro ********************/
+
+.error-page{
+	min-height: 508px;
+	padding: 10px 30px;
+}
+.error-page>div{
+	text-align: center;
+}
+.error-page>div>h3{
+	font-size: 300px;
+	color: #e23637;
+}
+.error-page>div>h2{
+	font-size: 21px;
+	padding-bottom: 10px;
+}
+.error-page>div>p{
+	font-size: 15px;
+}
+.error-page>div>p>a{
+	color: #e23637;
+	text-decoration: underline;
+}
+
+/*==============================================*/
+
+@media screen and (max-width: 768px){
+	.menu-desktop{
+		display: none;
+	}
+	.menu-mobile{
+		display: block;
+	}
+	footer .container>h2{
+		font-size: 15px;
+	}
+	.fundo-transparente{
+		padding: 60px 50px;
+	}
+}
+
+@media screen and (max-width: 645px){
+	.login,
+	.opcoes-tela-branca{
+		padding: 0 35px;
+	}
+	.alerta-mensagem>h3,
+	.sucesso-mensagem>h3,
+	.erro-mensagem>h3{
+		padding-right: 0;
+		padding-bottom: 10px;
+		font-size: 23px;
+		display: block;
+	}
+}

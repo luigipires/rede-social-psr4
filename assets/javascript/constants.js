@@ -1,0 +1,1 @@
+var path = document.querySelector('base').getAttribute('base');
