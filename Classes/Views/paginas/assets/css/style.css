@@ -109,6 +109,7 @@ header .container{
 	min-height: 350px;
 	position: relative;
 	padding: 20px 10px 30px 10px;
+	box-shadow: 15px 15px 30px 4px rgb(10, 10, 10);
 }
 .fechar-janela{
 	width: 32px;
@@ -236,6 +237,114 @@ header .container{
 	cursor: pointer;
 }
 
+/**************** sobre ********************/
+
+.sobre .container{
+	max-width: 1100px;
+	margin: 0 auto;
+	min-height: 503px;
+	padding: 20px;
+}
+.sobre .container>h2{
+	font-size: 35px;
+	color: #2186C4;
+	text-align: center;
+}
+.informacoes-sobre{
+	padding-top: 60px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.conteudo-sobre,
+.imagem-sobre{
+	width: 50%;
+	padding: 0 10px;
+}
+.conteudo-sobre>h2{
+	font-size: 22px;
+	color: #FF8086;
+	padding-bottom: 15px;
+}
+.conteudo-sobre>p{
+	font-size: 17px;
+	color: #3F464D;
+}
+.imagem-sobre>img{
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+/**************** contato ********************/
+
+.contato .container{
+	max-width: 1100px;
+	margin: 0 auto;
+	min-height: 503px;
+	padding: 20px;
+}
+.contato .container>h2{
+	font-size: 24px;
+	color: #2186C4;
+	text-decoration: underline;
+	text-align: center;
+}
+.contato .container form{
+	max-width: 600px;
+	padding: 20px 20px 0 20px;
+	margin: 0 auto;
+}
+.contato .container form div{
+	padding: 10px 0;
+}
+.contato .container form div p{
+	padding-bottom: 5px;
+	font-size: 16px;
+	text-align: center;
+	color: #2186C4;
+}
+.contato .container form div input[type=text]{
+	width: 100%;
+	height: 40px;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	outline: 0;
+	padding: 10px;
+}
+.contato .container form div input[type=email]{
+	width: 100%;
+	height: 40px;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	outline: 0;
+	padding: 10px;
+}
+.contato .container form div textarea{
+	width: 100%;
+	height: 200px;
+	resize: vertical;
+	border: 2px solid #2186C4;
+	border-radius: 5px;
+	outline: 0;
+	padding: 10px;
+}
+.contato .container form div input[type=submit]{
+	width: 250px;
+	margin: 20px auto;
+	display: block;
+	cursor: pointer;
+	height: 45px;
+	border: 0;
+	background-color:  #2186C4;
+	border-radius: 5px;
+	outline: 0;
+	color: #FFF6E6;
+	font-size: 17px;
+	padding: 10px;
+}
+.contato .container form div input[type=submit]:hover{
+	opacity: 0.9;
+}
+
 /**************** cadastro ********************/
 
 .cadastro .container{
@@ -265,6 +374,47 @@ header .container{
 	color: #2186C4;
 	font-size: 17px;
 	padding-bottom: 10px;
+}
+.tooltip{
+	padding-bottom: 10px;
+	text-align: center;
+	position: relative;
+}
+.tooltip>h3{
+	display: inline-block;
+	color: black;
+	font-size: 15px;
+	cursor: pointer;
+}
+.tooltip>h3:hover{
+	color: rgb(30, 30, 30);
+}
+.tooltip>p{
+	display: inline-block;
+	color: #2186C4;
+	font-size: 17px;
+	padding-right: 3px;
+}
+.text-tooltip{
+	position: absolute;
+	display: inline-block;
+	top: -60px;
+	text-align: center;
+}
+.text-tooltip>div{
+	position: absolute;
+	left: -5px;
+	display: none;
+	background-color: black;
+	padding: 10px 15px;
+	border-radius: 5px;
+	z-index: 1;
+	width: 200px;
+}
+.text-tooltip>div>p{
+	font-size: 13px;
+	text-align: justify;
+	color: white;
 }
 .form-cadastro>form>div>input[type=text]{
 	outline: 0;
@@ -367,10 +517,10 @@ footer .container>h2{
 .sucesso-mensagem>h3{
 	font-size: 20px;
 	display: inline-block;
-	padding-right: 10px;
+	padding-right: 6px;
 	color: #FFF6E6;
 }
-.sucesso-mensagem>p{
+.sucesso-mensagem>h2{
 	font-size: 17px;
 	display: inline-block;
 	color: #FFF6E6;
@@ -388,10 +538,10 @@ footer .container>h2{
 .erro-mensagem>h3{
 	font-size: 20px;
 	display: inline-block;
-	padding-right: 10px;
+	padding-right: 6px;
 	color: #FFF6E6;
 }
-.erro-mensagem>p{
+.erro-mensagem>h2{
 	font-size: 17px;
 	display: inline-block;
 	color: #FFF6E6;
@@ -409,10 +559,10 @@ footer .container>h2{
 .alerta-mensagem>h3{
 	font-size: 20px;
 	display: inline-block;
-	padding-right: 10px;
+	padding-right: 6px;
 	color: #FFF6E6;
 }
-.alerta-mensagem>p{
+.alerta-mensagem>h2{
 	font-size: 17px;
 	display: inline-block;
 	color: #FFF6E6;
@@ -420,31 +570,6 @@ footer .container>h2{
 }
 .alerta-mensagem>p>a{
 	color: white !important;
-	text-decoration: underline;
-}
-
-/**************** página de erro ********************/
-
-.error-page{
-	min-height: 508px;
-	padding: 10px 30px;
-}
-.error-page>div{
-	text-align: center;
-}
-.error-page>div>h3{
-	font-size: 300px;
-	color: #e23637;
-}
-.error-page>div>h2{
-	font-size: 21px;
-	padding-bottom: 10px;
-}
-.error-page>div>p{
-	font-size: 15px;
-}
-.error-page>div>p>a{
-	color: #e23637;
 	text-decoration: underline;
 }
 
@@ -463,6 +588,15 @@ footer .container>h2{
 	.fundo-transparente{
 		padding: 60px 50px;
 	}
+	.conteudo-sobre,
+	.imagem-sobre{
+		width: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.imagem-sobre{
+		padding-top: 30px;
+	}
 }
 
 @media screen and (max-width: 645px){
@@ -470,12 +604,37 @@ footer .container>h2{
 	.opcoes-tela-branca{
 		padding: 0 35px;
 	}
+}
+
+@media screen and (max-width: 500px){
+	.text-tooltip{
+		width: 100%;
+		margin: 0 auto;
+		top: -55px;
+		display: block;
+	}
+	.text-tooltip>div{
+		width: 100%;
+		left: 0;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 445px){
 	.alerta-mensagem>h3,
 	.sucesso-mensagem>h3,
 	.erro-mensagem>h3{
 		padding-right: 0;
-		padding-bottom: 10px;
+		padding-bottom: 5px;
 		font-size: 23px;
 		display: block;
+	}
+}
+
+@media screen and (max-width: 420px){
+	.form-cadastro>form>div>input[type=submit],
+	.login>form>div>input[type=submit],
+	.contato .container form div input[type=submit]{
+		width: 100%;
 	}
 }

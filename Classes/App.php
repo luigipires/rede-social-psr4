@@ -14,7 +14,13 @@
 			if($url[0] == ''){
 				$path.='Home';
 			}else{
-				$path.=ucfirst(strtolower($url[0]));
+				if(preg_match('/([-]{1,})/', $url[0])){
+					$url = preg_replace('/([-]{1,})/', '', $url[0]);
+				}else{
+					$url = $url[0];
+				}
+
+				$path.=ucfirst(strtolower($url));
 			}
 
 			$path.='Controller';
@@ -29,7 +35,7 @@
 		}
 
 		public function run(){
-			$this-> setApp();
+			$this->setApp();
 			$this->controller->index();
 		}
 	}

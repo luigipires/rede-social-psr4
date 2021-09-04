@@ -4,35 +4,52 @@
 	use Classes\Views\puxarViews;
 	use Classes\Metodos;
 	use Classes\MySql;
-	
+
 	use Classes\Models\UsersModel;
 	use Classes\Models\PostagensModel;
 
-	class HomeController{
-
-		//nome da pastas
-		private static $usuarios = 'usuarios';
-		private static $postagens = 'postagens';
+	class PerfilController{
 
 		public function index(){
+
 			if(!isset($_SESSION['login'])){
-				puxarViews::renderizar('inicio/home');
+				Metodos::redirecionar(PATH);
 			}
 
-			$data = PostagensModel::dataFriends();
+			$id = $_SESSION['id'];
+			$url = explode('/',$_GET['url']);
 
-			self::deslogar();
+			//pega parâmetro para ver qual perfil está sendo acessado
+			if($url[1] == $id){
+				//mandando informações do usuário para a view
+				$data = UsersModel::getUserID($url[1]);
+
+				$nomePasta = ucfirst($data['nome']).'_'.ucfirst($data['sobrenome']);
+
+				$data = array_merge($data,array('nome_pasta' => $nomePasta));
+				$anotherData = PostagensModel::getPosts($url[1]);
+
+				if(count($anotherData) == 0){
+					$anotherData = ['aviso' => 'Você não fez nenhuma publicação!'];
+				}
+			}else{
+				//mandando informações do usuário para a view
+				$data = UsersModel::getUserID($url[1]);
+
+				$nomePasta = ucfirst($data['nome']).'_'.ucfirst($data['sobrenome']);
+
+				$data = array_merge($data,array('nome_pasta' => $nomePasta));
+				$anotherData = PostagensModel::getPosts($url[1]);
+
+				if(count($anotherData) == 0){
+					$anotherData = ['aviso' => 'Este usuário não fez nenhuma publicação!'];
+				}
+			}
+
 			self::deletarPostagem();
 			self::deletarImagem();
 
-			puxarViews::renderizarPainel('painel/home',$data);
-		}
-
-		//desloga da conta
-		private static function deslogar(){
-			if(isset($_GET['sair'])){
-				Metodos::logout();
-			}
+			puxarViews::renderizarPainel('painel/perfil',$data,$anotherData);
 		}
 
 		//exclui postagem
@@ -88,7 +105,7 @@
 				$imagensPost = PostagensModel::getDataImage('id',$id);
 				$dados = PostagensModel::getDataPost($imagensPost['postagem_id']);
 
-				$pasta = self::$postagens.'/'.$dados['nome_pasta'];
+				$pasta = 'postagens/'.$dados['nome_pasta'];
 
 				//deleta a imagem
 				Metodos::deleteFile($pasta,$imagensPost['nome_imagem']);

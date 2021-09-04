@@ -1,7 +1,21 @@
 https://color.adobe.com/pt/search?q=social%20network
 
 fazer responsivo mais detalhado em larguras menores
-tooltip para ver senhas
+problema para usar as classes, tem includes
+redirect do cadastro
+ajeitar foto dos usuários listados, botões e responsivo, ainda mais da comunidade
 
-fazer página de erro
-problema para usar as classes
+/****************************************/
+
+ver redirect quando tem a box sucesso
+feedback dizendo q subi imagens ou arquivos
+order by desc não funciona postagens model
+edição de posts <====================
+comentar em tudo pra identificãção <=============
+opção de excluir conta <================
+menu lateral
+excluir imagem ficcar só quando vou editar postagem
+
+/****************************************
+
+criar cookies

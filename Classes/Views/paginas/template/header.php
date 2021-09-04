@@ -3,11 +3,15 @@
 <head>
 	<meta charset="utf-8">
 
+	<!-- ícone -->
+	<link rel="icon" href="<?php echo ASSETS; ?>imagens/icone.ico" type="image/x-icon" />
+
 	<!-- links -->
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="<?php echo PATH; ?>assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSETS; ?>css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSETS; ?>css/styleError.css">
 
 	<title>Rede social</title>
 
@@ -36,16 +40,34 @@
 		<div class="container">
 			<a href="<?php echo PATH; ?>">
 				<div class="logo">
-					<img src="<?php echo PATH; ?>assets/imagens/logo.png">
+					<img src="<?php echo ASSETS; ?>imagens/logo.png">
 				</div><!-- logo -->
 			</a>
 
 			<nav class="menu-desktop">
 				<ul>
+					<?php
+						if(isset($_SESSION['login'])){
+					?>
+					<li><a href="<?php echo PATH; ?>"><?php echo ucfirst($_SESSION['nome']); ?></a></li>
+					<?php
+						}else{
+					?>
 					<li><a href="<?php echo PATH; ?>">Home</a></li>
+					<?php
+						}
+					?>
+
 					<li><a href="<?php echo PATH; ?>sobre">Sobre</a></li>
 					<li><a href="<?php echo PATH; ?>contato">Contato</a></li>
+
+					<?php
+						if(!isset($_SESSION['login'])){
+					?>
 					<li><a login>Entrar</a></li>
+					<?php
+						}
+					?>
 				</ul>
 			</nav><!-- menu-desktop -->
 
@@ -53,12 +75,31 @@
 				<h3><i class="fas fa-bars"></i></h3>
 
 				<ul>
+					<?php
+						if(isset($_SESSION['login'])){
+					?>
+					<li><a href="<?php echo PATH; ?>"><?php echo ucfirst($_SESSION['nome']); ?></a></li>
+					<?php
+						}else{
+					?>
 					<li><a href="<?php echo PATH; ?>">Home</a></li>
+					<?php
+						}
+					?>
+
 					<li><a href="<?php echo PATH; ?>sobre">Sobre</a></li>
 					<li><a href="<?php echo PATH; ?>contato">Contato</a></li>
+
+					<?php
+						if(!isset($_SESSION['login'])){
+					?>
 					<li><a login>Entrar</a></li>
+					<?php
+						}
+					?>
 				</ul>
 			</nav><!-- menu-mobile -->
+			
 			<div class="clear"></div>
 		</div><!-- container -->
 	</header>

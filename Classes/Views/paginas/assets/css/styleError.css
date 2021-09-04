@@ -1,0 +1,44 @@
+/**************** página de erro ********************/
+
+.error-page{
+	min-height: 508px;
+	padding: 10px 30px;
+}
+.error-page>div{
+	text-align: center;
+}
+.error-page>div>h3{
+	font-size: 300px;
+	color: #e23637;
+}
+.error-page>div>h2{
+	font-size: 21px;
+	padding-bottom: 10px;
+}
+.error-page>div>p{
+	font-size: 15px;
+}
+.error-page>div>p>a{
+	color: #e23637;
+	text-decoration: underline;
+}
+
+/**************** classe auxiliar ********************/
+
+.error-painel{
+	background-color: #FFF6E6;
+	height: 100%;
+	padding-top: 70px;
+	border-radius: 5px;
+}
+
+/*==============================================*/
+
+@media screen and (max-width: 410px){
+	.error-page{
+		padding-top: 70px;
+	}
+	.error-page>div>h3{
+		font-size: 200px;
+	}
+}
